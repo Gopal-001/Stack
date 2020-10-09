@@ -1,5 +1,5 @@
 #include <iostream>
-
+#define size=10
 using namespace std;
 
 class Stack
@@ -9,7 +9,7 @@ class Stack
     int *s;
 public:
     Stack(){
-        size = 10;
+        //size = 10;
         top = -1;
         s=new int[size];
     }
@@ -38,7 +38,7 @@ Stack::Stack(int a,int *c)
         top++;
     }
 }
-
+//display the elements in the stack
 void Stack::Display()
 {
     for(int i=top;i>=0;i--){
@@ -46,7 +46,7 @@ void Stack::Display()
     }
     cout<<endl;
 }
-
+//inserts an element in a stack
 void Stack::Push(int x)
 {
     if(!isFull()){
@@ -56,7 +56,7 @@ void Stack::Push(int x)
         cout<<"Stack is Full!"<<endl;
     }
 }
-
+//deletes the topost element in a stack
 int Stack::Pop()
 {
     if(!isEmpty())
@@ -70,7 +70,7 @@ int Stack::Pop()
         return -1;
     }
 }
-
+//prints teh topmost element in a stack
 int Stack::Peek(int ind)
 {
     if(ind >=1 && ind <= top+1)
@@ -78,12 +78,12 @@ int Stack::Peek(int ind)
     else
         cout<<"Invalid index value."<<endl;
 }
-
+//returns the length of stack
 int Stack::Stack_Length()
 {
     return top+1;
 }
-
+//returns if the stack is empty
 bool Stack::isEmpty()
 {
     return (top== -1)?true:false;
